@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+    @keyframes slideSlightRight {
+      0% {
+        transform: translateX(0);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(40px);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideSlightLeft {
+      0% {
+        transform: translateX(0);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(-40px);
+        opacity: 1;
+      }
+    }
+
+    .left-slide {
+      animation: slideSlightRight 1s ease-out forwards;
+    }
+
+    .right-slide {
+      animation: slideSlightLeft 1s ease-out forwards;
+    }
+
+    /* Fast Continuous Tilt */
+    @keyframes sway {
+      0%, 100% {
+        transform: rotateZ(0deg);
+      }
+      50% {
+        transform: rotateZ(3deg);
+      }
+    }
+
+    .sway {
+      animation: sway 1.5s ease-in-out infinite;
+    }
+
+     @keyframes bounce-up {
+      0% {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+      60% {
+        transform: translateY(-20%);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .bounce-up {
+      animation: bounce-up 1s ease-out;
+    }
+   </style>
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+      <script src="https://unpkg.com/scrollreveal@4"></script>
+</head>
+<body>
+    <div class="bg-[#010010] min-h-screen w-full ">
+        <header class="flex  justify-around p-[19px] gap-4">
+            <img class="h-12" src="images/upper-a.png" alt="">
+            <img class="h-12" src="images/upper-b.png" alt="">
+            <button class="text-white border rounded-full p-2 hover:bg-blue-700" onclick="window.location.href='contact.html'">Contact Us</button>
+        </header>
+
+         <div class="flex flex-row items-center justify-center min-h-screen space-x-2 md:space-x-8 px-2 md:px-4">
+            <div class="flex-1 flex justify-end w-2/5 md:w-auto left-slide mr-9">
+                <img id="leftImg" class="w-full max-w-[120px] md:max-w-[400px] rounded-full" src="images/ball-1.jpg" alt="">
+            </div>
+            <div class="flex-1 text-center w-1/3 md:w-auto flex flex-col items-center mx-1 md:mx-0 bounce-up">
+                 <p class="border w-32 md:w-70 m-auto text-[#502b88] rounded-full mb-4 md:mb-10 text-xs md:text-base">AI Data Processing</p>
+                 <h1 class="text-white text-lg md:text-6xl mb-1 md:mb-4">Championing AI for Data <br class="hidden md:block">Processing Excellence</h1>
+                 <p class="text-white text-xs md:text-xl mb-2 md:mb-3">Experience the pinnacle of efficiency in data processing with <br> AI at the helm driving excellence in every operation</p>
+                 <div class="flex flex-col md:flex-row gap-2 md:gap-5 items-center justify-center  w-full">
+                   <button class="bg-[#502b88] rounded-full p-2 px-4 w-full md:w-auto hover:bg-blue-800" onclick="window.location.href ='contact.html' ">Contact Us</button>
+                   <button class="bg-[#4a3edc] rounded-full p-2 px-4 w-full md:w-auto hover:bg-purple-700" onClick = "window.location.href='services.html' ">Our Services</button>
+                 </div>
+            </div>
+            <div class="flex-1 flex justify-start w-2/5 md:w-auto ml-10 right-slide">
+                <img id="rightImg" class="w-full max-w-[120px] md:max-w-[400px] rounded-full" src="images/ball-2.jpg" alt="">
+            </div>
+         </div>
+
+
+
+         <div class="min-h-screen px-4">
+             <p class="text-base md:text-lg text-center text-white mb-6 md:mb-19 bounce-up">BUSINESS RELY ON US FOR CUSTOMER ENGAGEMENT</p>
+             <div class="flex flex-wrap justify-center gap-3 md:gap-5">
+                <img class="h-10 md:h-15 " src="images/mid-1.webp" alt="">
+                 <img class="h-10 md:h-15 " src="images/mid-2.webp" alt="">
+                 <img class="h-10 md:h-15 " src="images/mid-3.webp" alt="">
+                 <img class="h-10 md:h-15" src="images/mid-4.avif" alt="">
+                 <img class="h-10 md:h-15 " src="images/mid-5.avif" alt="">
+                 <img class="h-10 md:h-15 " src="images/photo-1674027444485-cec3da58eef4.avif" alt="">
+                 <img class="h-10 md:h-15 " src="images/mid-7.webp" alt="">
+             </div>
+             <div class="text-center h-auto md:h-screen mt-10 md:mt-20">
+                <button class="rounded-full text-[#291650] border font-bold m-4 md:m-10 p-2 w-full md:w-auto hover:bg-purple-900" onclick="window.location.href='Services.html'">ABOUT US</button>
+                <h1 class="text-3xl md:text-6xl text-white mb-6 md:mb-15">Crafting Tomorrow's <br class="hidden md:block"> Innovative Solutions</h1>
+                <p class="text-white text-base md:text-xl">We're consistently pushing the boundaries of innovation to create <br class="hidden md:block"> groundbreaking solutions that effectively meet today's challenges.</p>
+                <button class="text-white bg-[#291650] m-4 md:m-10 p-2 rounded-full w-full md:w-auto hover:bg-purple-900" onclick="window.location.href='Services.html' ">Our Services</button>
+             </div>
+         </div>
+         
+
+        
+
+    </div>
+    <script src="script.js"></script>
+    <script>
+    setTimeout(() => {
+      document.getElementById("leftImg").classList.add("sway");
+      document.getElementById("rightImg").classList.add("sway");
+    }, 1000);
+  </script>
+</body>
+</html>
+

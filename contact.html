@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,4 +31,52 @@
         AOS.init();
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+ 
+</head>
+<body class="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 flex  justify-center h-screen items-center ">
+    <form id="contactForm" class=" border rounded-xl shadow-md w-full max-w-sm">
+        <h1 class="text-2xl mt-3 mb-4 font-bold text-center ">CONTACT US</h1>
+        <input type="text"  id="name" placeholder="your name"
+        class="w-full border border-gray-300 rounded px-3 py-2 mb-3 focus:outline-none focus:ring-2 focus:ring-blue-500"> <br>
+
+
+        <input type="text" id="email" placeholder="your email"
+        class="w-full border border-gray-300 rounded px-3 py-2 mb-3 focus:outline-none focus:ring-2 focus:ring-blue-500"> <br>
+
+        <textarea placeholder="your message" class="w-full border border-gray-300 rounded px-3 py-2 mb-3 focus:outline-none focus:ring-2 focus:ring-blue-500 "></textarea> <br>
+        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-800 transition ">submit</button>
+        <p id="error-msg" class="text-red-500 mt-2"></p>
+    
+    </form>
+    <script>
+       document.getElementById("contactForm").addEventListener("submit", function(event) {
+      let name = document.getElementById("name").value.trim();
+      let email = document.getElementById("email").value.trim();
+
+      let nameRegex = /^[a-zA-Z\s]+$/;
+      let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+      
+      if (!nameRegex.test(name) || !emailRegex.test(email)) {
+        event.preventDefault();
+        document.getElementById("error-msg").textContent = "Please fill valid name and email.";
+      } else {
+        document.getElementById("error-msg").textContent = "";
+        event.preventDefault(); 
+        alert("Thank you for submitting! We will contact you soon.");
+        document.getElementById("contactForm").reset();
+      }
+    });
+    </script>
+</body>
+>>>>>>> c18bc0b948bf7a2f0227a37f4e54883247e4c055
 </html>
